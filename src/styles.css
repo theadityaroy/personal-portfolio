@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fefffe;
+  font-weight: 400;
+  background-color: #000000;
+  margin: 10rem;
+  margin-top: 2rem;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Header styling */
+.header-bar {
+  width: 100%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 16px 50px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 999px;
+  background-color: #131315;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5rem;
+}
+
+.nav-item {
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: #ffc901;
+}
+
+.header-brand {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  padding: 40px 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-column-gap: 32px;
+  grid-row-gap: 60px;
+  border-radius: 24px;
+  background-color: #131315;
+}
+
+.image {
+  border-radius: 100%;
+  width: 8rem;
+}
+
+.big-heading {
+  line-height: 1.2;
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.contact-sectionA {
+  line-height: 1.2;
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
+  border: 0;
+  display: inline-block;
+  color: #000000;
+  min-height: 96px;
+  padding: 24px 32px;
+  border-radius: 99px;
+  background-color: #ffc901;
+  transition: background-color 300ms ease-out;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+}
