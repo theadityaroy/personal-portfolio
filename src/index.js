@@ -1,69 +1,83 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles.css";
 
+// Functional components for better readability and maintainability
 function App() {
   return (
     <div className="app-container">
       <Header />
-      <SectionA />
+      <MainContent />
     </div>
   );
 }
 
-////// HEAD SECTION //////
 const Header = () => {
   return (
-    <div className='header-bar'>
-      <HeaderItem text="theadityaroy" className="header-brand" />
-      <div className='nav-menu'>
-        <HeaderItem text="home" />
-        <HeaderItem text="works" />
-        <HeaderItem text="contact" />
-      </div>
+    <div className="header">
+      <div className="nav-item">theadityaroy.</div>
+      <Nav />
     </div>
   );
-}
+};
 
-const HeaderItem = (props) => {
+const Nav = () => {
   return (
-    <div className={`nav-item ${props.className}`}>
-      {props.text}
+    <div className="nav-menu">
+      <div className="nav-item">home.</div>
+      <div className="nav-item --grey">works.</div>
+      <div className="nav-item --grey">contact.</div>
     </div>
   );
-}
+};
 
-////// MAIN ///////
-const SectionA = () => {
+const MainContent = () => {
   return (
-    <div className='main-container'>
-      <ProfileCard width='60%' />
-      <ContactCard width='40%' />
+    <div className="main-content">
+      <ProfileCard />
+      <ContactCard />
     </div>
-  )
-}
+  );
+};
 
-////// CARD //////
-const ProfileCard = (props) => {
+const ProfileCard = () => {
   return (
-    <div className='card' style={{ maxWidth: props.width }}>
-      <img src='Assets/ProfilePicture.jpg' alt='profile-picture' className='image' />
-      <h1 className='big-heading'>aditya roy<br></br>is a full stack<br></br>web developer.</h1>
+    <div className="card">
+      <img
+        src="Assets/ProfilePicture.jpg"
+        alt="aditya roy"
+        className="image"
+      />
+      <p className="description">
+        aditya roy
+        <br />
+        is a <span className="span --grey">web developer.</span>
+      </p>
     </div>
-  )
-}
+  );
+};
 
-const ContactCard = (props) => {
+const ContactCard = () => {
   return (
-    <div className='card' style={{ maxWidth: props.width, alignItems: 'center' }}>
-      <div className='contact-sectionA'>
-        <img src='Assets/project-icon.png' alt='project-icon' />
-        Have a project<br></br>in mind?
+    <div className="card contact-card">
+      <div className="context-container">
+        <img
+          src="Assets/project-icon.png"
+          alt="Project Icon"
+          className="contact-icon"
+        />
+        <div className="contact-text">
+          Have a project
+          <br />
+          in mind?
+        </div>
       </div>
-      <button className='button'>heyy@aadi.com</button>
+      <a href="mailto:workwithadityaroy@gmail.com" className="button">
+        heyy@aadi.com
+      </a>
     </div>
-  )
-}
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

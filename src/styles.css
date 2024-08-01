@@ -1,5 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* Import fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+/* CSS Variables */
+:root {
+  --grey-color: #8a8a93;
+  --background-color: #000000;
+  --header-bg-color: #131315;
+  --highlight-color: #ffc901;
+  --text-color: #fefffe;
+  --font-family: "Inter", sans-serif;
+  --card-bg-color: #131315;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,114 +21,234 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  color: #fefffe;
-  font-weight: 400;
-  background-color: #000000;
-  margin: 10rem;
-  margin-top: 2rem;
+  margin: 8.7rem;
+  margin-top: 1.5rem;
+  padding: 0;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container Styles (use more descriptive names) */
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
-/* Header styling */
-.header-bar {
+/* Header Styles */
+.header {
   width: 100%;
   display: flex;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 16px 50px;
   justify-content: space-between;
   align-items: center;
+  padding: 16px 32px;
   border-radius: 999px;
-  background-color: #131315;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--header-bg-color);
+  box-shadow: var(--box-shadow);
 }
 
+/* Navigation Styles */
 .nav-menu {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   gap: 5rem;
 }
 
 .nav-item {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
   transition: color 0.3s;
+  cursor: pointer;
+}
+
+.nav-item.--grey {
+  color: var(--grey-color);
 }
 
 .nav-item:hover {
-  color: #ffc901;
+  color: var(--highlight-color);
 }
 
-.header-brand {
-  font-weight: 600;
-  font-size: 24px;
-}
-
-.main-container {
+/* Main Content Styles */
+.main-content {
   width: 100%;
-  display: flex;
-  gap: 1rem;
-  margin-right: auto;
-  margin-left: auto;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 8px;
 }
 
+/* Card Styles */
 .card {
-  display: flex;
   width: 100%;
-  padding: 40px 50px;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  grid-column-gap: 32px;
-  grid-row-gap: 60px;
+  gap: 2rem;
+  padding: 40px 48px;
   border-radius: 24px;
-  background-color: #131315;
+  background-color: var(--card-bg-color);
+  box-shadow: var(--box-shadow);
 }
 
+/* Image Styles */
 .image {
   border-radius: 100%;
-  width: 8rem;
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
 }
 
-.big-heading {
+/* Heading Styles */
+.description {
+  width: 100%;
   line-height: 1.2;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 4rem;
 }
 
-.contact-sectionA {
-  line-height: 1.2;
-  font-size: 50px;
-  font-weight: 500;
+.span.--grey {
+  color: var(--grey-color);
+}
+
+/* Contact Section Styles */
+.contact-card {
   text-align: center;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  padding: 40px 48px;
+  justify-content: space-between;
+  align-items: stretch;
+  border-radius: 24px;
+  background-color: var(--card-bg-color);
 }
 
+.context-container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-icon {
+  width: 4rem;
+}
+
+.contact-text {
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+/* Button Styles */
 .button {
-  border: 0;
+  border: none;
   display: inline-block;
-  color: #000000;
+  color: var(--background-color);
   min-height: 96px;
   padding: 24px 32px;
   border-radius: 99px;
-  background-color: #ffc901;
+  background-color: var(--highlight-color);
   transition: background-color 300ms ease-out;
-  font-size: 40px;
+  font-size: 2rem;
   line-height: 48px;
   font-weight: 600;
   text-align: center;
   letter-spacing: -0.01em;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    gap: 2rem;
+  }
+
+  .nav-item {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    padding: 20px 24px;
+  }
+
+  .image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .description {
+    font-size: 3rem;
+  }
+
+  .contact-text {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .button {
+    min-height: 72px;
+    padding: 16px 24px;
+    font-size: 1.5rem;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 2.5rem;
+  }
+
+  .contact-text {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .button {
+    min-height: 60px;
+    padding: 12px 16px;
+    font-size: 1.2rem;
+    line-height: 28px;
+  }
 }
